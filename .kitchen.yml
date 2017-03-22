@@ -1,0 +1,16 @@
+---
+driver:
+  name: vagrant
+  customize:
+    cpus: 2
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: boxcutter/centos72
+
+suites:
+  - name: default
+    run_list:
+      - recipe[fisheye]

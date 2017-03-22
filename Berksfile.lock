@@ -1,0 +1,7 @@
+DEPENDENCIES
+  fisheye
+    path: .
+    metadata: true
+
+GRAPH
+  fisheye (0.1.0)
