@@ -1,0 +1,13 @@
+[Unit]
+Description=Atlassian FishEye
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=<%= @user %>
+Group=<%= @group %>
+ExecStart=<%= @fisheye_install_dir %>/bin/start.sh
+ExecStop=<%= @fisheye_install_dir %>/bin/stop.sh
+
+[Install]
+WantedBy=multi-user.target

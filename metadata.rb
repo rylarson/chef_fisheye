@@ -5,3 +5,5 @@ license          'MIT'
 description      'Installs/Configures atlassian fisheye'
 long_description description
 version          '0.1.0'
+
+depends 'zipfile'

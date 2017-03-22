@@ -1,6 +1,10 @@
 ---
 driver:
   name: vagrant
+  network:
+    - ["forwarded_port", {guest: 8060, host: 8060}]
+  synced_folders:
+      - [".", "/tmp/fisheye"]
   customize:
     cpus: 2
 
@@ -12,5 +16,16 @@ platforms:
 
 suites:
   - name: default
+    attributes:
+      fisheye:
+        # This depends on you having a fisheye zip in the root directory for testing
+        zip_file_uri: file:///tmp/fisheye/<%= File.basename(Dir['fisheye-*.zip'].first) %>
+       # Install a working Java so FishEye will run
+      java:
+        install_flavor: oracle
+        jdk_version: 8
+        oracle:
+          accept_oracle_download_terms: true
     run_list:
+      - recipe[java]
       - recipe[fisheye]
