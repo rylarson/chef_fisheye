@@ -1,10 +1,15 @@
 # fisheye-cookbook
 
-TODO: Enter the cookbook description here.
+This cookbook installs Atlassian Fisheye. It does not install Java
+for you. Do that as part of your own wrapper/role.
+
+You just need to configure the location (URI) of the FishEye zip
+file that you want to install and the cookbook does the rest of the
+work for you
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Centos 7.x
 
 ## Attributes
 
@@ -16,10 +21,10 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['fisheye']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['fisheye']['zip_file_uri']</tt></td>
+    <td>String</td>
+    <td>URI to the fisheye ZIP file you wish to install</td>
+    <td><tt>nil</tt></td>
   </tr>
 </table>
 
@@ -39,4 +44,4 @@ Include `fisheye` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Ryan Larson (<ryan.mango.larson@gmail.com>)

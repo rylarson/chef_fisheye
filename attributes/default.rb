@@ -1,0 +1,1 @@
+default['fisheye']['zip_file_uri'] = nil
